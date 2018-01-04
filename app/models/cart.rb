@@ -28,6 +28,4 @@ class Cart < ActiveRecord::Base
    end
    update(status: "submitted")
  end
-
-
 end

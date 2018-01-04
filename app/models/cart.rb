@@ -27,7 +27,7 @@ class Cart < ActiveRecord::Base
      line_item.item.inventory -= line_item.quantity
      line_item.item.save
    end
-   self.user = nil
+   user.remove_cart
    update(status: "submitted")
  end
 end

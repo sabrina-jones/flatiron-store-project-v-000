@@ -22,12 +22,12 @@ class Cart < ActiveRecord::Base
  end
 
  def check_out
+   #binding.pry
    line_items.each do |line_item|
      line_item.item.inventory -= line_item.quantity
      line_item.item.save
    end
+   user.remove_cart
    update(status: "submitted")
  end
-
-
 end
